@@ -42,29 +42,30 @@ class UserModel {
   @override
   int get hashCode => id.hashCode ^ name.hashCode ^ age.hashCode;
 
-  // Map<String, dynamic> toMap() {
-  //   final result = <String, dynamic>{};
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
 
-  //   if(id != null){
-  //     result.addAll({'id': id!.toMap()});
-  //   }
-  //   result.addAll({'name': name});
-  //   if(age != null){
-  //     result.addAll({'age': age});
-  //   }
+    if (id != null) {
+      result.addAll({'id': id});
+    }
+    result.addAll({'name': name});
+    if (age != null) {
+      result.addAll({'age': age});
+    }
 
-  //   return result;
-  // }
+    return result;
+  }
 
-  // factory UserModel.fromMap(Map<String, dynamic> map) {
-  //   return UserModel(
-  //     id: map['id'] != null ? Id.fromMap(map['id']) : null,
-  //     name: map['name'] ?? '',
-  //     age: map['age']?.toInt(),
-  //   );
-  // }
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      id: map['id'],
+      name: map['name'] ?? '',
+      age: map['age']?.toInt(),
+    );
+  }
 
-  // String toJson() => json.encode(toMap());
+  String toJson() => json.encode(toMap());
 
-  // factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source));
+  factory UserModel.fromJson(String source) =>
+      UserModel.fromMap(json.decode(source));
 }

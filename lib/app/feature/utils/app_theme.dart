@@ -13,7 +13,9 @@ sealed class AppTheme {
   static ThemeData themeData = ThemeData(
     useMaterial3: true,
     inputDecorationTheme: InputDecorationTheme(
+      isCollapsed: true,
       filled: true,
+      isDense: true,
       fillColor: AppConstantColors.white,
       labelStyle: const TextStyle(color: AppConstantColors.grey),
       border: _defaultOutlineInputBorder,

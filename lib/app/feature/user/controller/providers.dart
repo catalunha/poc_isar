@@ -30,7 +30,7 @@ class CRUDUser extends _$CRUDUser {
     final userModel = UserModel(name: name, age: age);
 
     final repo = await ref.read(userRepositoryProvider.future);
-    int id = await repo.create(userModel);
+    int? id = await repo.create(userModel);
     _editedUser = await getById(id: id);
 
     state = AsyncData([_editedUser!, ...state.requireValue]);
@@ -53,9 +53,9 @@ class CRUDUser extends _$CRUDUser {
     ref.invalidateSelf();
   }
 
-  Future<void> sort(String field) async {
-    final repo = await ref.read(userRepositoryProvider.future);
-    final itens = await repo.sort(field);
-    state = AsyncData(itens);
-  }
+  // Future<void> sort(String field) async {
+  //   final repo = await ref.read(userRepositoryProvider.future);
+  //   final itens = await repo.sort(field);
+  //   state = AsyncData(itens);
+  // }
 }

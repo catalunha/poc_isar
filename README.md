@@ -10,6 +10,9 @@ https://pub.dev/packages/isar
 
 ## Getting Started
 
+catalunha@pop-os:~/myapp/pocs/poc_isar$ dart run build_runner watch -d
+
+# history
 catalunha@pop-os:~$ flutter create --project-name poc_isar --platforms android,web,linux ./poc_isar
 
 flutter pub add isar isar_flutter_libs path_provider

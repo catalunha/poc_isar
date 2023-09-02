@@ -29,6 +29,13 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 
+  static const OutlineInputBorder _defaultOutlineInputBorder =
+      OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(8),
+    ),
+    borderSide: BorderSide(color: AppConstantColors.grey),
+  );
   @override
   Widget build(BuildContext context) {
     final crudUser = ref.watch(cRUDUserProvider);
@@ -171,30 +178,30 @@ class _HomePageState extends ConsumerState<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text('List with ${data.length} Users'),
-                            ElevatedButton.icon(
-                                onPressed: () {
-                                  ref
-                                      .read(cRUDUserProvider.notifier)
-                                      .sort('id');
-                                },
-                                icon: const Icon(Icons.sort),
-                                label: const Text('id')),
-                            ElevatedButton.icon(
-                                onPressed: () {
-                                  ref
-                                      .read(cRUDUserProvider.notifier)
-                                      .sort('Name');
-                                },
-                                icon: const Icon(Icons.sort),
-                                label: const Text('Name')),
-                            ElevatedButton.icon(
-                                onPressed: () {
-                                  ref
-                                      .read(cRUDUserProvider.notifier)
-                                      .sort('Age');
-                                },
-                                icon: const Icon(Icons.sort),
-                                label: const Text('Age')),
+                            // ElevatedButton.icon(
+                            //     onPressed: () {
+                            //       ref
+                            //           .read(cRUDUserProvider.notifier)
+                            //           .sort('id');
+                            //     },
+                            //     icon: const Icon(Icons.sort),
+                            //     label: const Text('id')),
+                            // ElevatedButton.icon(
+                            //     onPressed: () {
+                            //       ref
+                            //           .read(cRUDUserProvider.notifier)
+                            //           .sort('Name');
+                            //     },
+                            //     icon: const Icon(Icons.sort),
+                            //     label: const Text('Name')),
+                            // ElevatedButton.icon(
+                            //     onPressed: () {
+                            //       ref
+                            //           .read(cRUDUserProvider.notifier)
+                            //           .sort('Age');
+                            //     },
+                            //     icon: const Icon(Icons.sort),
+                            //     label: const Text('Age')),
                           ],
                         )),
                       ),
